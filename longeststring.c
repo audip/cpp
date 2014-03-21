@@ -2,6 +2,8 @@
 
 #define MAXLENGTH 1000
 
+//Porgram to find Longest String
+
 int getLine();
 void copy();
 
