@@ -10,6 +10,7 @@ void ins(int item, int pos);
 void del(int item);
 void show();
 void input();
+void bubblesort();
 
 int main()
 {
@@ -21,6 +22,8 @@ int main()
 		cout<<"\n2. Show Array Elements";
 		cout<<"\n3. Insert an Element";
 		cout<<"\n4. Delete an Element";
+		cout<<"\n5. Sort using Bubbles";
+		cout<<"\n6. Sort using Selection Sort";
 		cout<<"\nEnter your choice:";
 		cin>>choice;
 		switch(choice)
@@ -40,6 +43,9 @@ int main()
 					 cin>>item;
 					 del(item);
 					 break;
+			case 5:  bubblesort();
+					 break;
+			case 6:  break;
 			default: cout<<"\nInvalid Choice!! Try Again!!";
 					 break;
 		}
@@ -86,4 +92,21 @@ void del(int item)
 		ar[loop_var]=ar[loop_var+1];
 	}
 	--N;
+}
+void bubblesort()
+{
+	unsigned register int loop_var1, loop_var2;
+	int temp;
+	for(loop_var1=0; loop_var1<N; ++loop_var1)
+	{
+		for(loop_var2=0; loop_var2<N-1-loop_var1; ++loop_var2)
+		{
+			if(ar[loop_var2]<ar[loop_var1])
+			{
+				temp=ar[loop_var1];
+				ar[loop_var1]=ar[loop_var2];
+				ar[loop_var2]=temp;
+			}
+		}
+	}
 }
